@@ -171,13 +171,11 @@
               <span>Mitra Toko</span>
             </a>
           </li>
-          <li class="nav-item border-dashed">
-            <button class="btn btn-toggle dropdown-toggle position-relative w-100 d-flex justify-content-between align-items-center text-dark p-2" data-bs-toggle="collapse" data-bs-target="#beverages-collapse" aria-expanded="false">
-              <div class="d-flex gap-3">
-                <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#beverages"></use></svg>
-                <span>Mitra Petani</span>
-              </div>
-            </button>
+           <li class="nav-item border-dashed">
+            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#snacks"></use></svg>
+              <span>Mitra Petani</span>
+            </a>
           </li>
         </ul>
       
