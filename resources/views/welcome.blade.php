@@ -154,11 +154,13 @@
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#pasta"></use></svg>
-              <span>Paket Buah</span>
-            </a>
-          </li>
+    <a href="{{ route('paket.buah') }}" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="#pasta"></use>
+        </svg>
+        <span>Paket Buah</span>
+    </a>
+</li>
           <li class="nav-item border-dashed">
             <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#breakfast"></use></svg>
