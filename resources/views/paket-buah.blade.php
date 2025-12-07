@@ -2,119 +2,106 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Paket Buah | BJBO</title>
+    <title>Paket Buah BJBO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
+            background-color: #3a8138ff;
         }
-
-        .container {
-            width: 90%;
-            margin: auto;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2e7d32;
-        }
-
-        .paket-wrapper {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        }
-
         .card img {
-            width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-body h3 {
-            margin: 0;
-            color: #388e3c;
-        }
-
-        .card-body p {
-            font-size: 14px;
-            color: #555;
-        }
-
         .harga {
+            color: red;
             font-weight: bold;
-            color: #d32f2f;
-            margin-top: 10px;
         }
-
-        .btn {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #43a047;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .btn:hover {
-            background-color: #2e7d32;
-        }
-
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>🍉 Paket Buah BJBO</h1>
+<div class="container mt-5 mb-5">
 
-    <div class="paket-wrapper">
+    <h2 class="text-center mb-4 text-white"> Paket Buah BJBO</h2>
+
+    <div class="row g-4">
 
         <!-- Paket 1 -->
-        <div class="card">
-            <img src="https://source.unsplash.com/300x200/?fruit" alt="Paket Buah">
-            <div class="card-body">
-                <h3>Paket Sehat</h3>
-                <p>Isi: Apel, Pisang, Jeruk</p>
-                <div class="harga">Rp 35.000</div>
-                <a href="#" class="btn">Pesan Sekarang</a>
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/paket_sehat.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Sehat</h5>
+                    <p>Isi: Apel, Pisang, Jeruk</p>
+                    <p class="harga">Rp 35.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
             </div>
         </div>
 
         <!-- Paket 2 -->
-        <div class="card">
-            <img src="https://source.unsplash.com/300x200/?tropical-fruit" alt="Paket Buah">
-            <div class="card-body">
-                <h3>Paket Tropis</h3>
-                <p>Isi: Mangga, Nanas, Semangka</p>
-                <div class="harga">Rp 45.000</div>
-                <a href="#" class="btn">Pesan Sekarang</a>
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/tropis.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Tropis</h5>
+                    <p>Isi: Mangga, Nanas, Semangka</p>
+                    <p class="harga">Rp 45.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
             </div>
         </div>
 
         <!-- Paket 3 -->
-        <div class="card">
-            <img src="https://source.unsplash.com/300x200/?fresh-fruit" alt="Paket Buah">
-            <div class="card-body">
-                <h3>Paket Keluarga</h3>
-                <p>Isi: Apel, Anggur, Jeruk, Pir</p>
-                <div class="harga">Rp 70.000</div>
-                <a href="#" class="btn">Pesan Sekarang</a>
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/keluarga.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Keluarga</h5>
+                    <p>Isi: Apel, Anggur, Jeruk, Pir</p>
+                    <p class="harga">Rp 70.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paket 4 -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/diet.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Diet</h5>
+                    <p>Isi: Apel, Kiwi, Stroberi</p>
+                    <p class="harga">Rp 40.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paket 5 -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/anak.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Anak</h5>
+                    <p>Isi: Pisang, Semangka, Melon</p>
+                    <p class="harga">Rp 30.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paket 6 -->
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ asset('images/premium.jpg') }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Paket Premium</h5>
+                    <p>Isi: Anggur, Kiwi, Apel Fuji</p>
+                    <p class="harga">Rp 90.000</p>
+                    <button class="btn btn-success w-100">Pesan Sekarang</button>
+                </div>
             </div>
         </div>
 
