@@ -141,36 +141,6 @@
       <div class="offcanvas-body">
     
         <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
-          <li class="nav-item border-dashed active">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#fruits"></use></svg>
-              <span>Fruits and vegetables</span>
-            </a>
-          </li>
-          <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#dairy"></use></svg>
-              <span>Dairy and Eggs</span>
-            </a>
-          </li>
-          <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#meat"></use></svg>
-              <span>Meat and Poultry</span>
-            </a>
-          </li>
-          <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#seafood"></use></svg>
-              <span>Seafood</span>
-            </a>
-          </li>
-          <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#bakery"></use></svg>
-              <span>Bakery and Bread</span>
-            </a>
-          </li>
           <li class="nav-item border-dashed">
             <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#canned"></use></svg>
@@ -208,14 +178,6 @@
                 <span>Mitra Petani</span>
               </div>
             </button>
-            <div class="collapse" id="beverages-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Water</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Juice</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Soda</a></li>
-                <li class="border-bottom py-2"><a href="index.html" class="dropdown-item">Tea</a></li>
-              </ul>
-            </div>
           </li>
         </ul>
       
