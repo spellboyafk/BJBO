@@ -13,7 +13,7 @@
         :root {
             --primary-color: #28a745;
             --secondary-color: #218838;
-            --accent-color: #ff6b35;
+            --accent-color: #0d6efd;
         }
 
         body {
@@ -21,7 +21,6 @@
             background-color: #f8f9fa;
         }
 
-        /* Header Styling */
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -68,10 +67,10 @@
             width: 100%;
         }
 
-        /* Banner Styling */
+        /* Hero Banner - GRADIENT KUNING SEPERTI HOMEPAGE */
         .hero-banner {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            padding: 4rem 0;
+            background: linear-gradient(135deg, #FFF4E6 0%, #FFE5B4 100%);
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -79,24 +78,28 @@
         .hero-banner::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
 
         .hero-banner h1 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #000;
+            text-shadow: none;
+            font-weight: 700;
+        }
+
+        .hero-banner .highlight {
+            color: var(--accent-color);
         }
 
         .hero-banner p {
-            color: rgba(255,255,255,0.95);
+            color: #666;
         }
 
-        /* Package Card */
         .package-card {
             transition: all 0.3s ease;
             border-radius: 15px;
@@ -140,37 +143,36 @@
             padding: 1rem;
         }
 
-        /* Buttons */
         .btn-primary {
-            background: var(--primary-color);
+            background: var(--accent-color);
             border: none;
             padding: 0.6rem 1.5rem;
-            border-radius: 10px;
+            border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-            background: var(--secondary-color);
+            background: #0b5ed7;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
         }
 
         .btn-outline-primary {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .btn-outline-primary:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, #212529 0%, #343a40 100%);
             margin-top: 4rem;
@@ -192,7 +194,6 @@
             transform: translateX(5px);
         }
 
-        /* Feature Icons */
         .feature-icon {
             width: 50px;
             height: 50px;
@@ -206,10 +207,9 @@
             margin-bottom: 1rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero-banner {
-                padding: 2rem 0;
+                padding: 3rem 0;
             }
         }
     </style>
@@ -220,7 +220,6 @@
 <header>
     <div class="container-fluid px-4">
         <div class="row py-3 align-items-center">
-            <!-- Logo -->
             <div class="col-md-3">
                 <a href="{{ url('/') }}" class="text-decoration-none">
                     <span class="logo-text">
@@ -229,13 +228,11 @@
                 </a>
             </div>
 
-            <!-- Search Bar -->
             <div class="col-md-5">
                 <form action="{{ route('buah.lokal') }}" method="get">
                     <div class="input-group search-bar rounded-pill overflow-hidden">
                         <input type="text" name="search" class="form-control border-0" 
-                               placeholder="Cari buah favorit Anda..." 
-                               value="{{ request('search') }}">
+                               placeholder="Cari buah favorit Anda...">
                         <button class="btn btn-primary" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
@@ -243,7 +240,6 @@
                 </form>
             </div>
 
-            <!-- Navigation -->
             <div class="col-md-4">
                 <ul class="nav justify-content-end gap-3 mb-0">
                     <li class="nav-item">
@@ -263,15 +259,13 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('paket.buah') }}" class="nav-link text-dark active">
-                            <i class="bi bi-box-seam"></i> Paket Buah
+                            <i class="bi bi-box-seam"></i> Paket
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-dark position-relative">
                             <i class="bi bi-cart3"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                0
-                            </span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                         </a>
                     </li>
                 </ul>
@@ -280,17 +274,33 @@
     </div>
 </header>
 
-<!-- Hero Banner -->
+<!-- Hero Banner - BACKGROUND KUNING -->
 <section class="hero-banner">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-8 mx-auto text-center">
+            <div class="col-lg-6">
                 <h1 class="display-4 fw-bold mb-3">
-                    <i class="bi bi-box2-heart-fill"></i> Paket Buah Segar
+                    <span class="highlight">Paket Buah</span> Segar<br>
+                    Hemat <span class="highlight">Lebih Banyak</span>
                 </h1>
-                <p class="lead fs-5">
-                    Hemat lebih banyak dengan paket buah pilihan kami. Segar, sehat, dan ekonomis!
+                <p class="lead fs-5 mb-4">
+                    Nikmati kelezatan buah segar dalam paket hemat.<br>
+                    Segar, sehat, dan ekonomis untuk keluarga!
                 </p>
+                <div class="d-flex gap-3">
+                    <a href="#packages" class="btn btn-primary">
+                        LIHAT PAKET
+                    </a>
+                    <a href="{{ route('buah.lokal') }}" class="btn btn-outline-primary">
+                        BELANJA SATUAN
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800" 
+                     alt="Paket Buah" 
+                     class="img-fluid"
+                     style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)); max-height: 400px;">
             </div>
         </div>
     </div>
@@ -325,7 +335,7 @@
                 <div class="feature-icon mx-auto">
                     <i class="bi bi-piggy-bank-fill"></i>
                 </div>
-                <h6 class="fw-bold">Hemat 20%</h6>
+                <h6 class="fw-bold">Hemat 30%</h6>
                 <p class="text-muted small mb-0">Dibanding beli satuan</p>
             </div>
         </div>
@@ -333,9 +343,8 @@
 </section>
 
 <!-- Packages Section -->
-<section class="py-5">
+<section class="py-5" id="packages">
     <div class="container">
-        <!-- Section Header -->
         <div class="text-center mb-5">
             <h2 class="fw-bold mb-3">
                 <i class="bi bi-star-fill text-warning"></i> Pilihan Paket Buah
@@ -343,7 +352,6 @@
             <p class="text-muted">Pilih paket yang sesuai dengan kebutuhan keluarga Anda</p>
         </div>
 
-        <!-- Packages Grid -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <!-- Package 1 -->
             <div class="col">
@@ -514,36 +522,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Why Choose Us -->
-        <div class="row mt-5 pt-5 border-top">
-            <div class="col-12 text-center mb-4">
-                <h3 class="fw-bold">
-                    <i class="bi bi-award-fill text-warning"></i> Kenapa Pilih Paket Buah Kami?
-                </h3>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="feature-icon mx-auto">
-                    <i class="bi bi-cash-coin"></i>
-                </div>
-                <h5 class="fw-bold mb-2">Harga Lebih Murah</h5>
-                <p class="text-muted">Hemat hingga 30% dibanding beli buah satuan</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="feature-icon mx-auto">
-                    <i class="bi bi-clock-history"></i>
-                </div>
-                <h5 class="fw-bold mb-2">Praktis & Efisien</h5>
-                <p class="text-muted">Tidak perlu repot pilih-pilih, sudah dalam satu paket</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="feature-icon mx-auto">
-                    <i class="bi bi-gift-fill"></i>
-                </div>
-                <h5 class="fw-bold mb-2">Bonus Menarik</h5>
-                <p class="text-muted">Setiap paket dilengkapi dengan bonus buah gratis</p>
             </div>
         </div>
     </div>

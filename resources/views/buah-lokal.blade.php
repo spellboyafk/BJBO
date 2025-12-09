@@ -4,18 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buah Lokal - Organic Store</title>
+    <title>Buah Lokal - FreshFruit</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendor.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     
     <style>
         :root {
             --primary-color: #28a745;
             --secondary-color: #218838;
-            --accent-color: #ff6b35;
+            --accent-color: #0d6efd;
         }
 
         body {
@@ -70,10 +68,10 @@
             width: 100%;
         }
 
-        /* Banner Styling */
+        /* Hero Banner - GRADIENT KUNING SEPERTI HOMEPAGE */
         .hero-banner {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            padding: 4rem 0;
+            background: linear-gradient(135deg, #FFF4E6 0%, #FFE5B4 100%);
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -81,21 +79,26 @@
         .hero-banner::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
 
         .hero-banner h1 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #000;
+            text-shadow: none;
+            font-weight: 700;
+        }
+
+        .hero-banner .highlight {
+            color: var(--accent-color);
         }
 
         .hero-banner p {
-            color: rgba(255,255,255,0.95);
+            color: #666;
         }
 
         /* Filter Section */
@@ -184,31 +187,32 @@
 
         /* Buttons */
         .btn-primary {
-            background: var(--primary-color);
+            background: var(--accent-color);
             border: none;
             padding: 0.6rem 1.5rem;
-            border-radius: 10px;
+            border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-            background: var(--secondary-color);
+            background: #0b5ed7;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
         }
 
         .btn-outline-primary {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .btn-outline-primary:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -272,7 +276,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-banner {
-                padding: 2rem 0;
+                padding: 3rem 0;
             }
             
             .filter-section {
@@ -329,11 +333,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('paket.buah') }}" class="nav-link text-dark">
+                            <i class="bi bi-box-seam"></i> Paket
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link text-dark position-relative">
                             <i class="bi bi-cart3"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                0
-                            </span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                         </a>
                     </li>
                 </ul>
@@ -342,24 +349,40 @@
     </div>
 </header>
 
-<!-- Hero Banner -->
+<!-- Hero Banner - BACKGROUND KUNING -->
 <section class="hero-banner">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-8 mx-auto text-center">
+            <div class="col-lg-6">
                 <h1 class="display-4 fw-bold mb-3">
-                    <i class="bi bi-stars"></i> Buah Lokal Pilihan
+                    <span class="highlight">Buah Lokal</span> Pilihan<br>
+                    Segar dari <span class="highlight">Petani</span> Indonesia
                 </h1>
-                <p class="lead fs-5">
-                    Segar dari kebun petani lokal Indonesia, langsung ke rumah Anda
+                <p class="lead fs-5 mb-4">
+                    Langsung dari kebun ke rumah Anda.<br>
+                    100% segar, organik, dan berkualitas tinggi!
                 </p>
+                <div class="d-flex gap-3">
+                    <a href="#products" class="btn btn-primary">
+                        BELANJA SEKARANG
+                    </a>
+                    <a href="{{ route('paket.buah') }}" class="btn btn-outline-primary">
+                        LIHAT PAKET HEMAT
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800" 
+                     alt="Buah Lokal" 
+                     class="img-fluid"
+                     style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)); max-height: 400px;">
             </div>
         </div>
     </div>
 </section>
 
 <!-- Filter Section -->
-<section class="py-5">
+<section class="py-5" id="products">
     <div class="container">
         <div class="filter-section mb-4">
             <form action="{{ route('buah.lokal') }}" method="GET">
