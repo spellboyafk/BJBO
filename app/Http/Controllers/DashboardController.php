@@ -2,66 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use App\Models\Order;      // ganti kalau modelmu bernama Transaction
-use App\Models\OrderItem;  // item pesanan (pivot)
 use App\Models\Product;
-use App\Models\User;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        // tanggal hari ini
-        $today = Carbon::today();
+        // 1. Transaksi hari ini
+        $transaksiHariIni = Order::whereDate('created_at', Carbon::today())->count();
 
-        // 1. Transaksi hari ini (jumlah order dibuat hari ini)
-        $transaksiHariIni = Order::whereDate('created_at', $today)->count();
+        // 2. Total pendapatan
+        $pendapatan = Order::where('status', 'paid')->sum('total');
 
-        // 2. Pendapatan hari ini (jumlah total; asumsi kolom 'total' dan status 'paid')
-        $pendapatan = Order::whereDate('created_at', $today)
-                           ->where('status', 'paid')
-                           ->sum('total');
+        // 3. Produk terlaris
+        $produkTerlaris = OrderItem::selectRaw('product_id, SUM(qty) as total')
+            ->groupBy('product_id')
+            ->orderByDesc('total')
+            ->with('product')
+            ->first();
 
-        // 3. Produk terlaris (berdasarkan qty terjual, lihat OrderItem)
-        $topProduct = OrderItem::select('product_id', DB::raw('SUM(qty) as total_qty'))
-                        ->groupBy('product_id')
-                        ->orderByDesc('total_qty')
-                        ->limit(1)
-                        ->first();
+        $produkTerlarisNama = $produkTerlaris ? $produkTerlaris->product->name : '-';
 
-        if ($topProduct) {
-            $produkTerlaris = Product::find($topProduct->product_id)->name ?? 'Unknown';
-        } else {
-            $produkTerlaris = null;
-        }
+        // 4. Pembeli baru hari ini
+        $pembeliBaru = \App\Models\User::whereDate('created_at', Carbon::today())->count();
 
-        // 4. Pembeli baru hari ini (asumsi User punya kolom 'role' atau gunakan filter lain)
-        $pembeliBaru = User::whereDate('created_at', $today)
-                           ->where('role', 'buyer') // jika tidak pakai role, sesuaikan
-                           ->count();
+        // 5. Stok rendah
+        $stokRendah = Product::where('stock', '<=', 5)->get();
 
-        // 5. Stok rendah — threshold 10 (sesuaikan)
-        $stokRendah = Product::where('stock', '<', 10)
-                             ->orderBy('stock', 'asc')
-                             ->get();
-
-        // 6. Status Pesanan
+        // 6. Status pesanan
         $pending = Order::where('status', 'pending')->count();
         $dikirim = Order::where('status', 'shipped')->count();
-        $gagal   = Order::whereIn('status', ['cancelled', 'failed', 'returned'])->count();
+        $gagal = Order::where('status', 'failed')->count();
 
-        return view('dashboard', compact(
-            'transaksiHariIni',
-            'pendapatan',
-            'produkTerlaris',
-            'pembeliBaru',
-            'stokRendah',
-            'pending',
-            'dikirim',
-            'gagal'
-        ));
+        return view('admin.dashboard', [
+            'transaksiHariIni' => $transaksiHariIni,
+            'pendapatan' => $pendapatan,
+            'produkTerlaris' => $produkTerlarisNama,
+            'pembeliBaru' => $pembeliBaru,
+            'stokRendah' => $stokRendah,
+            'pending' => $pending,
+            'dikirim' => $dikirim,
+            'gagal' => $gagal,
+        ]);
     }
 }

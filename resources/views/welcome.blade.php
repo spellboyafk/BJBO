@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Organic - Grocery Store HTML Website Template</title>
+    <title>BJBO- Bengkalis Jual Buah Online</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -275,11 +275,11 @@
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
-            <h2 class="display-1 ls-1"><span class="fw-bold text-primary">Organic</span> Foods at your <span class="fw-bold">Doorsteps</span></h2>
-            <p class="fs-4">MENJUAL ANEKA JENIS BONDA.</p>
+            <h2 class="display-1 ls-1"><span class="fw-bold text-primary">Belanja Buah</span> Segar <span class="fw-bold">Lebih Mudah</span></h2>
+            <p class="fs-4">Kami Antar Sampai Rumah!</p>
             <div class="d-flex gap-3">
-              <a href="#" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Start Shopping</a>
-              <a href="#" class="btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Join Now</a>
+              <a href="#" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Mulai Berbelanja</a>
+              <a href="#" class="btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Gabung Sekarang</a>
             </div>
             <div class="row my-5">
               <div class="col">
@@ -313,8 +313,8 @@
                 </div>
                 <div class="col-md-9">
                   <div class="card-body p-0">
-                    <h5 class="text-light">Fresh from farm</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                    <h5 class="text-light">Langsung dari Kebunnya</h5>
+                    <p class="card-text">Kami menghadirkan buah-buahan segar yang dipetik langsung dari kebunnya. Tanpa perantara, tanpa lama di gudang—hanya kesegaran asli yang sampai ke tangan Anda.</p>
                   </div>
                 </div>
               </div>
@@ -329,7 +329,7 @@
                 <div class="col-md-9">
                   <div class="card-body p-0">
                     <h5 class="text-light">100% Organic</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                    <p class="card-text">Setiap buah ditanam dengan perhatian penuh, tanpa pestisida kimia dan tanpa bahan tambahan sintetis. Anda mendapatkan produk yang alami, sehat, dan aman untuk keluarga.</p>
                   </div>
                 </div>
               </div>
@@ -343,8 +343,8 @@
                 </div>
                 <div class="col-md-9">
                   <div class="card-body p-0">
-                    <h5 class="text-light">Free delivery</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                    <h5 class="text-light">Gratis Ongkir ke Rumah Anda</h5>
+                    <p class="card-text">Belanja buah jadi lebih mudah—cukup pesan, kami antar langsung ke rumah Anda tanpa biaya tambahan. Praktis, cepat, dan nyaman.</p>
                   </div>
                 </div>
               </div>
@@ -377,57 +377,69 @@
         <div class="row">
           <div class="col-md-12">
 
-            <div class="category-carousel swiper">
+           <div class="category-carousel swiper">
               <div class="swiper-wrapper">
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Buah Lokal</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-2.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Buah Impor</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-3.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Buah Potong</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-4.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Paket Buah</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-5.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Jus Buah</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-6.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Sayur Segar</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-7.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Promo & Bundling</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-8.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Buah Musiman</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Snack Sehat</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
+                  <img src="images/category-thumb-2.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Minuman Segar</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
+                  <img src="images/category-thumb-3.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Hampers Buah</h4>
                 </a>
+
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
+                  <img src="images/category-thumb-4.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">Semua Produk</h4>
                 </a>
-                
+
               </div>
             </div>
 
@@ -444,7 +456,7 @@
 
             <div class="section-header d-flex flex-wrap justify-content-between my-4">
               
-              <h2 class="section-title">Best selling products</h2>
+              <h2 class="section-title">Produk Best Seller</h2>
 
               <div class="d-flex align-items-center">
                 <a href="#" class="btn btn-primary rounded-1">View All</a>
@@ -1205,14 +1217,14 @@
             <div class="row justify-content-center">
               <div class="col-md-5 p-3">
                 <div class="section-header">
-                  <h2 class="section-title display-5 text-light">Get 25% Discount on your first purchase</h2>
+                  <h2 class="section-title display-5 text-light">Dapatkan Diskon 25% pada pembelian pertama Anda</h2>
                 </div>
-                <p>Just Sign Up & Register it now to become member.</p>
+                <p>Cukup Daftar & Daftar sekarang untuk menjadi anggota.</p>
               </div>
               <div class="col-md-5 p-3">
                 <form>
                   <div class="mb-3">
-                    <label for="name" class="form-label d-none">Name</label>
+                    <label for="name" class="form-label d-none">Nama</label>
                     <input type="text"
                       class="form-control form-control-md rounded-0" name="name" id="name" placeholder="Name">
                   </div>
@@ -1242,7 +1254,7 @@
 
             <div class="section-header d-flex justify-content-between my-4">
               
-              <h2 class="section-title">Most popular products</h2>
+              <h2 class="section-title">Produk terpopuler</h2>
 
               <div class="d-flex align-items-center">
                 <a href="#" class="btn btn-primary me-2">View All</a>
@@ -1575,7 +1587,7 @@
 
             <div class="section-header d-flex justify-content-between my-4">
               
-              <h2 class="section-title">Just arrived</h2>
+              <h2 class="section-title">Baru saja tiba</h2>
 
               <div class="d-flex align-items-center">
                 <a href="#" class="btn btn-primary me-2">View All</a>
@@ -1904,7 +1916,7 @@
       <div class="container-lg">
         <div class="row">
           <div class="section-header d-flex align-items-center justify-content-between my-4">
-            <h2 class="section-title">Our Recent Blog</h2>
+            <h2 class="section-title">Artikel terkait</h2>
             <a href="#" class="btn btn-primary">View All</a>
           </div>
         </div>
@@ -1983,8 +1995,8 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col-md-4">
-                <h2 class="mt-5">Download Organic App</h2>
-                <p>Online Orders made easy, fast and reliable</p>
+                <h2 class="mt-5">Kunjungi BJBO</h2>
+                <p>Belanja online jadi makin mudah, cepat, dan pastinya terpercaya.</p>
                 <div class="d-flex gap-2 flex-wrap mb-5">
                   <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store"></a>
                   <a href="#" title="Google Play"><img src="images/img-google-play.png" alt="google-play"></a>
@@ -2000,91 +2012,100 @@
       </div>
     </section>
 
-    <section class="py-4">
+        <section class="py-4">
       <div class="container-lg">
-        <h2 class="my-4">People are also looking for</h2>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
+        <h2 class="my-4">Orang-orang juga sedang mencari</h2>
+
+        <a href="#" class="btn btn-warning me-2 mb-2">Pisang Barangan</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Jeruk Santang Madu</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Mangga Harum Manis</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Pepaya California</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Nanas Madu Bengkalis</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Buah Naga Merah</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Semangka Merah Lokal</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Melon Hijau Manis</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Jambu Kristal</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Apel Malang</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Salak Pondoh</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Rambutan Lokal</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Durian Bengkalis</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Kelapa Muda</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Anggur Merah</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Pisang Cavendish</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Jeruk Medan</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Buah Naga Putih</a>
       </div>
     </section>
 
-    <section class="py-5">
+
+        <section class="py-5">
       <div class="container-lg">
         <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
+
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
               <div class="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#package"></use></svg>
               </div>
               <div class="card-body p-0">
-                <h5>Free delivery</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <h5>Gratis Antar</h5>
+                <p class="card-text">Kami antar langsung ke rumah Anda tanpa biaya tambahan.</p>
               </div>
             </div>
           </div>
+
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
               <div class="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#secure"></use></svg>
               </div>
               <div class="card-body p-0">
-                <h5>100% secure payment</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <h5>Pembayaran Aman</h5>
+                <p class="card-text">Setiap transaksi terlindungi dan bisa Anda percayai.</p>
               </div>
             </div>
           </div>
+
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
               <div class="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#quality"></use></svg>
               </div>
               <div class="card-body p-0">
-                <h5>Quality guarantee</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <h5>Kualitas Pilihan</h5>
+                <p class="card-text">Buah segar pilihan terbaik, langsung dari kebun.</p>
               </div>
             </div>
           </div>
+
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
               <div class="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#savings"></use></svg>
               </div>
               <div class="card-body p-0">
-                <h5>guaranteed savings</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <h5>Harga Bersahabat</h5>
+                <p class="card-text">Belanja hemat tanpa mengurangi kualitas.</p>
               </div>
             </div>
           </div>
+
           <div class="col">
             <div class="card mb-3 border border-dark-subtle p-3">
               <div class="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#offers"></use></svg>
               </div>
               <div class="card-body p-0">
-                <h5>Daily offers</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <h5>Promo Setiap Hari</h5>
+                <p class="card-text">Selalu ada penawaran menarik buat Anda.</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
+
 
     <footer class="py-5">
       <div class="container-lg">
@@ -2202,11 +2223,11 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer-menu">
-              <h5 class="widget-title">Subscribe Us</h5>
-              <p>Subscribe to our newsletter to get updates about our grand offers.</p>
+              <h5 class="widget-title">Berlangganan</h5>
+              <p>Daftarkan email Anda untuk menerima info promo dan penawaran terbaru dari kami.</p>
               <form class="d-flex mt-3 gap-0" action="index.html">
-                <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address" aria-label="Email Address">
-                <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
+                <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Alamat Email" aria-label="Alamat Email">
+                <button class="btn btn-dark rounded-end rounded-0" type="submit">Belangganan</button>
               </form>
             </div>
           </div>
@@ -2218,7 +2239,7 @@
       <div class="container-lg">
         <div class="row">
           <div class="col-md-6 copyright">
-            <p>© 2024 Organic. All rights reserved.</p>
+            <p>© 2025 BJBO. All rights reserved.</p>
           </div>
           <div class="col-md-6 credit-link text-start text-md-end">
             <p>HTML Template by <a href="https://templatesjungle.com/">TemplatesJungle</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a> </p>
