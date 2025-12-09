@@ -2,20 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuahLokalController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome'); 
 });
 
-Route::get('/panel', function () {
-    return view('admin.dashboard');
-});
+// Dashboard Admin - Gunakan Controller
+Route::get('/panel', [DashboardController::class, 'index'])->name('panel');
 
-// Ganti route buah-lokal dengan controller
+// Buah Lokal - Gunakan Controller dengan fitur lengkap
 Route::get('/buah-lokal', [BuahLokalController::class, 'index'])->name('buah.lokal');
 Route::get('/buah-lokal/{id}', [BuahLokalController::class, 'show'])->name('buah.lokal.show');
 
-// Route lainnya tetap seperti semula
+// Route lainnya
 Route::get('/buah-impor', function () {
     return view('buah-impor');
 })->name('buah.impor');
@@ -35,4 +35,3 @@ Route::get('/mitra-toko', function () {
 Route::get('/mitra-petani', function () {
     return view('mitra-petani');
 })->name('mitra.petani');
-
