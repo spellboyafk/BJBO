@@ -142,8 +142,10 @@
     
         <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#canned"></use></svg>
+            <a href="{{ route('buah.lokal') }}" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <use xlink:href="#fruits"></use>
+              </svg>
               <span>Buah Lokal</span>
             </a>
           </li>
