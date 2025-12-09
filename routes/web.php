@@ -3,15 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuahLokalController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MitraPetaniController;
 
 Route::get('/', function () {
     return view('welcome'); 
 });
 
-// Dashboard Admin - Gunakan Controller
+// Dashboard Admin
 Route::get('/panel', [DashboardController::class, 'index'])->name('panel');
 
-// Buah Lokal - Gunakan Controller dengan fitur lengkap
+// Buah Lokal
 Route::get('/buah-lokal', [BuahLokalController::class, 'index'])->name('buah.lokal');
 Route::get('/buah-lokal/{id}', [BuahLokalController::class, 'show'])->name('buah.lokal.show');
 
@@ -32,6 +33,13 @@ Route::get('/mitra-toko', function () {
     return view('mitra-toko');
 })->name('mitra.toko');
 
-Route::get('/mitra-petani', function () {
-    return view('mitra-petani');
-})->name('mitra.petani');
+// Mitra Petani - PUBLIC
+Route::get('/mitra-petani', [MitraPetaniController::class, 'create'])->name('mitra.petani');
+Route::post('/mitra-petani', [MitraPetaniController::class, 'store'])->name('mitra.petani.store');
+
+// Mitra Petani - ADMIN
+Route::prefix('admin/mitra-petani')->group(function () {
+    Route::get('/', [MitraPetaniController::class, 'index'])->name('admin.mitra-petani.index');
+    Route::get('/{id}', [MitraPetaniController::class, 'show'])->name('admin.mitra-petani.show');
+    Route::post('/{id}/update-status', [MitraPetaniController::class, 'updateStatus'])->name('admin.mitra-petani.update-status');
+});
