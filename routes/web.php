@@ -1,19 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BuahLokalController;
 
 Route::get('/', function () {
     return view('welcome'); 
 });
 
 Route::get('/panel', function () {
-
     return view('admin.dashboard');
 });
-Route::get('/buah-lokal', function () {
-    return view('buah-lokal');
-})->name('buah.lokal');
 
+// Ganti route buah-lokal dengan controller
+Route::get('/buah-lokal', [BuahLokalController::class, 'index'])->name('buah.lokal');
+Route::get('/buah-lokal/{id}', [BuahLokalController::class, 'show'])->name('buah.lokal.show');
+
+// Route lainnya tetap seperti semula
 Route::get('/buah-impor', function () {
     return view('buah-impor');
 })->name('buah.impor');
