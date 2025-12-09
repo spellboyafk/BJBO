@@ -6,10 +6,8 @@ Route::get('/', function () {
     return view('welcome'); 
 });
 
-Route::get('/panel', function () {
+Route::get('/panel', [\App\Http\Controllers\DashboardController::class, 'index']);
 
-    return view('admin.dashboard');
-});
 Route::get('/buah-lokal', function () {
     return view('buah-lokal');
 })->name('buah.lokal');
