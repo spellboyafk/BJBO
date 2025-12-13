@@ -5,12 +5,14 @@ use App\Http\Controllers\BuahLokalController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MitraPetaniController;
 
+
 Route::get('/', function () {
     return view('welcome'); 
 });
 
 // Dashboard Admin
-Route::get('/panel', [DashboardController::class, 'index'])->name('panel');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->name('dashboard');
 
 // Buah Lokal
 Route::get('/buah-lokal', [BuahLokalController::class, 'index'])->name('buah.lokal');
@@ -42,4 +44,5 @@ Route::prefix('admin/mitra-petani')->group(function () {
     Route::get('/', [MitraPetaniController::class, 'index'])->name('admin.mitra-petani.index');
     Route::get('/{id}', [MitraPetaniController::class, 'show'])->name('admin.mitra-petani.show');
     Route::post('/{id}/update-status', [MitraPetaniController::class, 'updateStatus'])->name('admin.mitra-petani.update-status');
+
 });
