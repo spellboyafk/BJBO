@@ -443,147 +443,175 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container-fluid">
-            <div class="row py-3 border-bottom">
-                
-                <!-- Logo & Toggle -->
-                <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-                    <div class="d-flex align-items-center my-3 my-sm-0">
-                        <a href="index.html">
-                            <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 20C8 15 10 12 14 12C16 12 17 13 17 15C17 16 16 17 15 17C14 17 13 16 13 15C13 14.5 13.2 14 14 14C13.5 13.5 13 13.5 12.5 13.5C10.5 13.5 9.5 15 9.5 18C9.5 22 11 24 13.5 24C15 24 16 23 16.5 21.5L18 22C17.5 24 15.5 25.5 13 25.5C10 25.5 8 23 8 20Z" fill="#6cc04a"/>
-                                <text x="22" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">Organic</text>
-                            </svg>
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-                
-                <!-- Search Bar -->
-                <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
-                    <div class="search-bar row bg-light p-2 rounded-4">
-                        <div class="col-md-4 d-none d-md-block">
-                            <select class="form-select border-0 bg-transparent">
-                                <option>All Categories</option>
-                                <option>Buah Segar</option>
-                                <option>Sayuran</option>
-                                <option>Organik</option>
-                            </select>
-                        </div>
-                        <div class="col-11 col-md-7">
-                            <form id="search-form" class="text-center" action="index.html" method="post">
-                                <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
-                            </form>
-                        </div>
-                        <div class="col-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation Menu -->
-                <div class="col-lg-4">
-                    <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
-                        <li class="nav-item active">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                                <li><a href="index.html" class="dropdown-item">About Us</a></li>
-                                <li><a href="index.html" class="dropdown-item">Shop</a></li>
-                                <li><a href="index.html" class="dropdown-item">Single Product</a></li>
-                                <li><a href="index.html" class="dropdown-item">Cart</a></li>
-                                <li><a href="index.html" class="dropdown-item">Checkout</a></li>
-                                <li><a href="index.html" class="dropdown-item">Contact</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- User Icons -->
-                <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
-                    <ul class="d-flex justify-content-end list-unstyled m-0">
-                        <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+       <header>
+      <div class="container-fluid">
+        <div class="row py-3 border-bottom">
+          
+          <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+            <div class="d-flex align-items-center my-3 my-sm-0">
+              <a href="index.html">
+                <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid">
+              </a>
             </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
+            </button>
+          </div>
+          
+          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+            <div class="search-bar row bg-light p-2 rounded-4">
+              <div class="col-md-4 d-none d-md-block">
+                <select class="form-select border-0 bg-transparent">
+                  <option>All Categories</option>
+                  <option>Groceries</option>
+                  <option>Drinks</option>
+                  <option>Chocolates</option>
+                </select>
+              </div>
+              <div class="col-11 col-md-7">
+                <form id="search-form" class="text-center" action="index.html" method="post">
+                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
+                </form>
+              </div>
+              <div class="col-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
+                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
+                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
+                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
+                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
+                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
+                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
+                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
+                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
+                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
+                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
+            <ul class="d-flex justify-content-end list-unstyled m-0">
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#user"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1 class="hero-title">
-                        <span class="primary-text">Belanja Buah</span><br>
-                        Segar <span class="secondary-text">Lebih<br>Mudah</span>
-                    </h1>
-                    <p class="hero-subtitle">Kami Antar Sampai Rumah!</p>
-                    <div>
-                        <button class="btn-primary-custom">MULAI BERBELANJA</button>
-                        <button class="btn-secondary-custom">GABUNG SEKARANG</button>
-                    </div>
-                </div>
-                <div class="col-lg-6 position-relative">
-                    <div class="hero-image">
-                        <svg class="fruit-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Apple -->
-                            <ellipse cx="100" cy="120" rx="60" ry="70" fill="#e74c3c" opacity="0.9"/>
-                            <ellipse cx="90" cy="110" rx="30" ry="35" fill="#c0392b" opacity="0.3"/>
-                            <rect x="95" y="40" width="10" height="30" fill="#8b4513" rx="5"/>
-                            <ellipse cx="110" cy="45" rx="15" ry="8" fill="#27ae60" transform="rotate(-20 110 45)"/>
-                            
-                            <!-- Orange -->
-                            <circle cx="180" cy="90" r="35" fill="#f39c12" opacity="0.9"/>
-                            <circle cx="175" cy="85" r="15" fill="#f1c40f" opacity="0.4"/>
-                            <circle cx="185" cy="88" r="3" fill="#d68910"/>
-                            <circle cx="175" cy="95" r="3" fill="#d68910"/>
-                            <circle cx="180" cy="85" r="3" fill="#d68910"/>
-                            
-                            <!-- Small berries -->
-                            <circle cx="30" cy="140" r="8" fill="#8b4513"/>
-                            <circle cx="40" cy="135" r="8" fill="#8b4513"/>
-                            <circle cx="35" cy="148" r="8" fill="#8b4513"/>
-                        </svg>
-                    </div>
-                </div>
+     <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-lg-6 pt-5 mt-5">
+            <h2 class="display-1 ls-1"><span class="fw-bold text-primary">Belanja Buah</span> Segar <span class="fw-bold">Lebih Mudah</span></h2>
+            <p class="fs-4">Kami Antar Sampai Rumah!</p>
+            <div class="d-flex gap-3">
+              <a href="#" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Mulai Berbelanja</a>
+              <a href="#" class="btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Gabung Sekarang</a>
             </div>
+            <div class="row my-5">
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">14k+</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">Product Varieties</p></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">50k+</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">Happy Customers</p></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">10+</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">Store Locations</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 g-0 justify-content-center">
+          <div class="col">
+            <div class="card border-0 bg-primary rounded-0 p-4 text-light">
+              <div class="row">
+                <div class="col-md-3 text-center">
+                  <svg width="60" height="60"><use xlink:href="#fresh"></use></svg>
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body p-0">
+                    <h5 class="text-light">Langsung dari Kebunnya</h5>
+                    <p class="card-text">Kami menghadirkan buah-buahan segar yang dipetik langsung dari kebunnya. Tanpa perantara, tanpa lama di gudang—hanya kesegaran asli yang sampai ke tangan Anda.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 bg-secondary rounded-0 p-4 text-light">
+              <div class="row">
+                <div class="col-md-3 text-center">
+                  <svg width="60" height="60"><use xlink:href="#organic"></use></svg>
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body p-0">
+                    <h5 class="text-light">100% Organic</h5>
+                    <p class="card-text">Setiap buah ditanam dengan perhatian penuh, tanpa pestisida kimia dan tanpa bahan tambahan sintetis. Anda mendapatkan produk yang alami, sehat, dan aman untuk keluarga.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 bg-danger rounded-0 p-4 text-light">
+              <div class="row">
+                <div class="col-md-3 text-center">
+                  <svg width="60" height="60"><use xlink:href="#delivery"></use></svg>
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body p-0">
+                    <h5 class="text-light">Gratis Ongkir ke Rumah Anda</h5>
+                    <p class="card-text">Belanja buah jadi lebih mudah—cukup pesan, kami antar langsung ke rumah Anda tanpa biaya tambahan. Praktis, cepat, dan nyaman.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
     </section>
 
     <!-- Shop Partners Section -->
