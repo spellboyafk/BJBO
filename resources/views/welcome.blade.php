@@ -150,7 +150,7 @@
             </a>
           </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="{{ route('buah.impor') }}" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#frozen"></use></svg>
               <span>Buah Impor</span>
             </a>
@@ -164,7 +164,7 @@
     </a>
 </li>
           <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="{{ route('promo') }}" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#breakfast"></use></svg>
               <span>Promo</span>
             </a>
@@ -180,7 +180,7 @@
 
 
            <li class="nav-item border-dashed">
-            <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+            <a href="{{ route('mitra.petani') }}"class="nav-link d-flex align-items-center gap-3 text-dark p-2">
               <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#snacks"></use></svg>
               <span>Mitra Petani</span>
             </a>
