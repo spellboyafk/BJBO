@@ -6,6 +6,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MitraPetaniController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\BuahImporController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
+
 
 Route::get('/test-promo', function () {
     return "TEST PROMO BERHASIL!";
@@ -23,6 +29,16 @@ Route::get('/', function () {
 // ========================================
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
+
+Route::resource('products', ProductController::class);
+Route::resource('buah-lokals', BuahLokalController::class);
+Route::resource('buah-impors', BuahImporController::class);
+Route::resource('orders', OrderController::class);
+Route::resource('promos', PromoController::class);
+Route::resource('mitra-petanis', MitraPetaniController::class);
+Route::resource('order-items', OrderItemController::class);
+Route::resource('users', UserController::class);
+Route::resource('user-profiles', UserProfileController::class);
 
 // ========================================
 // BUAH LOKAL
