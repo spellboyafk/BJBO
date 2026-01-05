@@ -21,13 +21,7 @@
             background-color: #f8f9fa;
         }
 
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    
 
         .logo-text {
             color: var(--primary-color);
@@ -35,10 +29,6 @@
             font-size: 1.5rem;
         }
 
-        .search-bar {
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
 
         .search-bar:focus-within {
             border-color: var(--primary-color);
@@ -218,61 +208,90 @@
 
 <!-- Header -->
 <header>
-    <div class="container-fluid px-4">
-        <div class="row py-3 align-items-center">
-            <div class="col-md-3">
-                <a href="{{ url('/') }}" class="text-decoration-none">
-                    <span class="logo-text">
-                        <i class="bi bi-basket2-fill"></i> FreshFruit
-                    </span>
-                </a>
+      <div class="container-fluid">
+        <div class="row py-3 border-bottom">
+          
+          <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+            <div class="d-flex align-items-center my-3 my-sm-0">
+              <a href="index.html">
+                <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid">
+              </a>
             </div>
-
-            <div class="col-md-5">
-                <form action="{{ route('buah.lokal') }}" method="get">
-                    <div class="input-group search-bar rounded-pill overflow-hidden">
-                        <input type="text" name="search" class="form-control border-0" 
-                               placeholder="Cari buah favorit Anda...">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
+            </button>
+          </div>
+          
+          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+            <div class="search-bar row bg-light p-2 rounded-4">
+              <div class="col-md-4 d-none d-md-block">
+                <select class="form-select border-0 bg-transparent">
+                  <option>All Categories</option>
+                  <option>Groceries</option>
+                  <option>Drinks</option>
+                  <option>Chocolates</option>
+                </select>
+              </div>
+              <div class="col-11 col-md-7">
+                <form id="search-form" class="text-center" action="index.html" method="post">
+                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
                 </form>
+              </div>
+              <div class="col-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
+              </div>
             </div>
+          </div>
 
-            <div class="col-md-4">
-                <ul class="nav justify-content-end gap-3 mb-0">
-                    <li class="nav-item">
-                        <a href="{{ url('/') }}" class="nav-link text-dark">
-                            <i class="bi bi-house-door"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('buah.lokal') }}" class="nav-link text-dark">
-                            <i class="bi bi-basket"></i> Buah Lokal
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('buah.impor') }}" class="nav-link text-dark">
-                            <i class="bi bi-globe"></i> Buah Impor
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('paket.buah') }}" class="nav-link text-dark active">
-                            <i class="bi bi-box-seam"></i> Paket
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-dark position-relative">
-                            <i class="bi bi-cart3"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                        </a>
-                    </li>
+          <div class="col-lg-4">
+            <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
+                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
+                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
+                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
+                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
+                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
+                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
+                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
+                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
+                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
+                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
                 </ul>
-            </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
+            <ul class="d-flex justify-content-end list-unstyled m-0">
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#user"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
 <!-- Hero Section -->
      <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
