@@ -119,7 +119,7 @@
                         <a class="btn btn-primary" href="#">
                             <i class="bx bx-plus"></i> Tambah Transaksi
                         </a>
-                        <a class="btn btn-outline-primary" href="#">
+                        <a class="btn btn-outline-primary" href="{{ route('products.index') }}" class="menu-link">
                             <i class="bx bx-package"></i> Tambah Produk
                         </a>
                         <a class="btn btn-outline-secondary" href="#">

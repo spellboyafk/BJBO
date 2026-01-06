@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['name','stock','price'];
-
-    public function orderItems()
-    {
-        return $this->hasMany(OrderItem::class);
-    }
+    protected $fillable = [
+        'name',
+        'price',
+        'stock'
+    ];
 }
+
