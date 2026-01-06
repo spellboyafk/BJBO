@@ -21,6 +21,200 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- Semua SVG symbols Anda tetap sama -->
+    <!-- ... (copy dari file asli Anda) ... -->
+</svg>
+
+<!-- HEADER -->
+<header>
+    <div class="container-fluid py-3">
+        <div class="row align-items-center">
+            
+            <!-- LOGO (Kiri) -->
+            <div class="col-2">
+                <div class="main-logo">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid" style="max-height: 50px;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- MENU NAVIGASI (Tengah) -->
+            <div class="col-8">
+                <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-center flex-grow-1 gap-3">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('buah-lokal*') ? 'active' : '' }}" href="{{ route('buah.lokal') }}">Buah Lokal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('buah-impor*') ? 'active' : '' }}" href="{{ route('buah.impor') }}">Buah Impor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('paket-buah*') ? 'active' : '' }}" href="{{ route('paket.buah') }}">Paket Buah</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('promo*') ? 'active' : '' }}" href="{{ route('promo') }}">Promo</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Mitra
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('mitra.petani') }}">Mitra Petani</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('mitra.toko') }}">Mitra Toko</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- AUTH SECTION (Kanan) - DIPINDAH KE SINI -->
+            <div class="col-2">
+                <div class="d-flex justify-content-end align-items-center gap-2">
+                    @auth
+                        <!-- Jika sudah login - Tampilkan Nama User & Dropdown -->
+                        <div class="dropdown">
+                            <button class="btn user-dropdown-btn dropdown-toggle" 
+                                    type="button"
+                                    id="userDropdown" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i>
+                                {{ Auth::user()->name }}
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        <i class="bi bi-speedometer2"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @else
+                        <!-- Jika belum login - Tampilkan Tombol Login & Register -->
+                        <a href="{{ route('login') }}" class="btn btn-login">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </a>
+                        <a href="{{ route('register') }}" class="btn btn-register">
+                            <i class="bi bi-person-plus"></i> Daftar
+                        </a>
+                    @endauth
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Style untuk button login/user di kanan */
+    .user-dropdown-btn {
+        background: none;
+        border: 1px solid #667eea;
+        color: #667eea;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+    }
+
+    .user-dropdown-btn:hover {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-login {
+        background: none;
+        border: 1px solid #667eea;
+        color: #667eea;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-login:hover {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-register {
+        background: #667eea;
+        border: 1px solid #667eea;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-register:hover {
+        background: #5568d3;
+        border-color: #5568d3;
+    }
+
+    header {
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: none;
+        border-radius: 8px;
+    }
+
+    .dropdown-item {
+        padding: 10px 20px;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+
+
+    <!-- ... semua section lainnya tetap sama ... -->
+
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+
   </head>
   <body>
 
@@ -184,92 +378,6 @@
       </div>
 
     </div>
-
-    <header>
-      <div class="container-fluid">
-        <div class="row py-3 border-bottom">
-          
-          <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-            <div class="d-flex align-items-center my-3 my-sm-0">
-              <a href="index.html">
-                <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid">
-              </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
-            </button>
-          </div>
-          
-          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
-            <div class="search-bar row bg-light p-2 rounded-4">
-              <div class="col-md-4 d-none d-md-block">
-                <select class="form-select border-0 bg-transparent">
-                  <option>All Categories</option>
-                  <option>Groceries</option>
-                  <option>Drinks</option>
-                  <option>Chocolates</option>
-                </select>
-              </div>
-              <div class="col-11 col-md-7">
-                <form id="search-form" class="text-center" action="index.html" method="post">
-                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
-                </form>
-              </div>
-              <div class="col-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
-              <li class="nav-item active">
-                <a href="index.html" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
-                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
-                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
-                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
-                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
-                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
-                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
-                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
-                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
-            <ul class="d-flex justify-content-end list-unstyled m-0">
-              <li>
-                <a href="#" class="p-2 mx-1">
-                  <svg width="24" height="24"><use xlink:href="#user"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="p-2 mx-1">
-                  <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </header>
     
     <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-lg">
@@ -1561,6 +1669,14 @@
     <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+
+<!-- Di bagian paling bawah sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+        crossorigin="anonymous"></script>
+<script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 

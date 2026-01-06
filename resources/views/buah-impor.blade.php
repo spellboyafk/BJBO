@@ -246,7 +246,7 @@
                                             </div>
                                             <div class="col-7">
                                                 <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">
-                                                    <svg width="18" height="18"><use xlink:href="#cart"></use></svg> Add to Cart
+                                                    <svg width="18" height="18"><use xlink:href="#cart"></use></svg> Tambah keranjang
                                                 </a>
                                             </div>
                                             <div class="col-2">

@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -18,6 +30,29 @@
     <title>@yield('title', config('app.name', 'BJBO') . ' Admin')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
+
+<<<<<<< HEAD
+            <!-- Page Heading -->
+            @isset($header)
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
+=======
 
     <meta name="description" content="" />
 
@@ -302,63 +337,12 @@
               </ul>
             </div>
           </nav>
+>>>>>>> 3b1ca24dfc0c2799b402a40dff19dc1006adde2d
 
-          <!-- / Navbar -->
-
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl grow container-p-y">
-              @hasSection('page_header')
-              @yield('page_header')
-              @endif
-
-              @yield('content')
-            </div>
-
-            <!-- / Content -->
-
-            <!-- Footer -->
-            <footer>
-
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
-
-
-    @stack('js')
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="/assets/vendor/libs/popper/popper.js"></script>
-    <script src="/assets/vendor/js/bootstrap.js"></script>
-    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
-    <script src="/assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
-    <script src="/assets/vendor/libs/apex-charts/apexcharts.js"></script>
-
-    <!-- Main JS -->
-    <script src="/assets/js/main.js"></script>
-
-    <!-- Page JS -->
-    <script src="/assets/js/dashboards-analytics.js"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
+    </body>
 </html>
