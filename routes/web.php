@@ -6,10 +6,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\MitraPetaniController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\BuahImporController;
-<<<<<<< HEAD
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
-=======
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\UserProfileController;
@@ -20,7 +18,6 @@ use App\Http\Controllers\Admin\OrderController;
 Route::get('/test-promo', function () {
     return "TEST PROMO BERHASIL!";
 });
->>>>>>> 3b1ca24dfc0c2799b402a40dff19dc1006adde2d
 
 // ========================================
 // HOME
@@ -32,8 +29,6 @@ Route::get('/', function () {
 // ========================================
 // PUBLIC ROUTES
 // ========================================
-<<<<<<< HEAD
-=======
 
 /*
 |--------------------------------------------------------------------------
@@ -79,8 +74,6 @@ Route::prefix('admin')
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
 });
 });
-
->>>>>>> 3b1ca24dfc0c2799b402a40dff19dc1006adde2d
 
 // Buah Lokal
 Route::get('/buah-lokal', [BuahLokalController::class, 'index'])->name('buah.lokal');
