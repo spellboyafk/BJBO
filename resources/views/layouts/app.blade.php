@@ -148,13 +148,13 @@
           </li>
 
           {{-- Produk --}}
-          <li class="menu-header small text-uppercase">
+           <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Manajemen Produk</span>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item {{ request()->routeIs('products.*') ? 'active' : '' }}">
             <a href="{{ route('products.index') }}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-package"></i>
+              <i class="menu-icon tf-icons bx bx-box"></i>
               <div>Produk</div>
             </a>
           </li>
@@ -192,10 +192,10 @@
             <span class="menu-header-text">Transaksi</span>
           </li>
 
-          <li class="menu-item">
-            <a href="#" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-receipt"></i>
-              <div>Pesanan</div>
+          <li class="menu-item {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.orders.index') }}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-cart"></i>
+              <div>Orders</div>
             </a>
           </li>
 
@@ -211,17 +211,10 @@
             <span class="menu-header-text">Pengguna</span>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
             <a href="{{ route('users.index') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-user"></i>
               <div>Users</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
-            <a href="{{ route('user-profiles.index') }}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-id-card"></i>
-              <div>Profil User</div>
             </a>
           </li>
 
@@ -322,10 +315,12 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
+                      <form method="POST" action="{{ route('admin.logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                          <i class="bx bx-power-off me-2"></i> Log Out
+                        </button>
+                      </form>
                     </li>
                   </ul>
                 </li>

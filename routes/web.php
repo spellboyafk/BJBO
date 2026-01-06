@@ -2,15 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuahLokalController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\MitraPetaniController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\BuahImporController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
 
 
 Route::get('/test-promo', function () {
@@ -27,18 +28,52 @@ Route::get('/', function () {
 // ========================================
 // DASHBOARD ADMIN
 // ========================================
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard');
 
-Route::resource('products', ProductController::class);
-Route::resource('buah-lokals', BuahLokalController::class);
-Route::resource('buah-impors', BuahImporController::class);
-Route::resource('orders', OrderController::class);
-Route::resource('promos', PromoController::class);
-Route::resource('mitra-petanis', MitraPetaniController::class);
-Route::resource('order-items', OrderItemController::class);
-Route::resource('users', UserController::class);
-Route::resource('user-profiles', UserProfileController::class);
+/*
+|--------------------------------------------------------------------------
+| ADMIN AUTH
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/login', function () {
+    return redirect()->route('admin.login');
+})->name('login');
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('admin.login');
+    Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+});
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN AREA (TERKUNCI)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('admin')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+
+        Route::get('/dashboard', [DashboardController::class, 'index'])
+            ->name('dashboard');
+
+        Route::resource('products', ProductController::class);
+        Route::resource('buah-lokals', BuahLokalController::class);
+        Route::resource('buah-impors', BuahImporController::class);
+        Route::resource('orders', OrderController::class);
+        Route::resource('promos', PromoController::class);
+        Route::resource('mitra-petanis', MitraPetaniController::class);
+        Route::resource('order-items', OrderItemController::class);
+        Route::resource('users', UserController::class);
+        Route::resource('user-profiles', UserProfileController::class);
+
+        Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
+});
+});
+
 
 // ========================================
 // BUAH LOKAL
