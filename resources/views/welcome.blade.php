@@ -21,6 +21,200 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- Semua SVG symbols Anda tetap sama -->
+    <!-- ... (copy dari file asli Anda) ... -->
+</svg>
+
+<!-- HEADER -->
+<header>
+    <div class="container-fluid py-3">
+        <div class="row align-items-center">
+            
+            <!-- LOGO (Kiri) -->
+            <div class="col-2">
+                <div class="main-logo">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid" style="max-height: 50px;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- MENU NAVIGASI (Tengah) -->
+            <div class="col-8">
+                <nav class="navbar navbar-expand-lg">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-center flex-grow-1 gap-3">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('buah-lokal*') ? 'active' : '' }}" href="{{ route('buah.lokal') }}">Buah Lokal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('buah-impor*') ? 'active' : '' }}" href="{{ route('buah.impor') }}">Buah Impor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('paket-buah*') ? 'active' : '' }}" href="{{ route('paket.buah') }}">Paket Buah</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->is('promo*') ? 'active' : '' }}" href="{{ route('promo') }}">Promo</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Mitra
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('mitra.petani') }}">Mitra Petani</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('mitra.toko') }}">Mitra Toko</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- AUTH SECTION (Kanan) - DIPINDAH KE SINI -->
+            <div class="col-2">
+                <div class="d-flex justify-content-end align-items-center gap-2">
+                    @auth
+                        <!-- Jika sudah login - Tampilkan Nama User & Dropdown -->
+                        <div class="dropdown">
+                            <button class="btn user-dropdown-btn dropdown-toggle" 
+                                    type="button"
+                                    id="userDropdown" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i>
+                                {{ Auth::user()->name }}
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        <i class="bi bi-speedometer2"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @else
+                        <!-- Jika belum login - Tampilkan Tombol Login & Register -->
+                        <a href="{{ route('login') }}" class="btn btn-login">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </a>
+                        <a href="{{ route('register') }}" class="btn btn-register">
+                            <i class="bi bi-person-plus"></i> Daftar
+                        </a>
+                    @endauth
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Style untuk button login/user di kanan */
+    .user-dropdown-btn {
+        background: none;
+        border: 1px solid #667eea;
+        color: #667eea;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+    }
+
+    .user-dropdown-btn:hover {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-login {
+        background: none;
+        border: 1px solid #667eea;
+        color: #667eea;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-login:hover {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-register {
+        background: #667eea;
+        border: 1px solid #667eea;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .btn-register:hover {
+        background: #5568d3;
+        border-color: #5568d3;
+    }
+
+    header {
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: none;
+        border-radius: 8px;
+    }
+
+    .dropdown-item {
+        padding: 10px 20px;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+
+
+    <!-- ... semua section lainnya tetap sama ... -->
+
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+
   </head>
   <body>
 
@@ -184,6 +378,7 @@
       </div>
 
     </div>
+<<<<<<< HEAD
 
     <header>
       <div class="container-fluid">
@@ -278,6 +473,8 @@
         </div>
       </div>
     </header>
+=======
+>>>>>>> a48d6f83279dc529383c7d03eb549a91f0560b12
     
     <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-lg">
@@ -1569,6 +1766,14 @@
     <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+
+<!-- Di bagian paling bawah sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+        crossorigin="anonymous"></script>
+<script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 

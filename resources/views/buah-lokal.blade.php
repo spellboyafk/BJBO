@@ -159,24 +159,66 @@
                 </div>
 
                 <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
-                    <ul class="d-flex justify-content-end list-unstyled m-0">
+    <ul class="d-flex justify-content-end list-unstyled m-0">
+        
+        <!-- User Dropdown -->
+        <li>
+            @auth
+                <div class="dropdown">
+                    <a href="#" class="p-2 mx-1 dropdown-toggle" data-bs-toggle="dropdown">
+                        <svg width="24" height="24"><use xlink:href="#user"></use></svg>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24"><use xlink:href="#user"></use></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="p-2 mx-1">
-                                <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                                <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
-                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="dropdown-item text-danger">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </div>
+            @else
+                <a href="{{ route('login') }}" class="p-2 mx-1">
+                    <svg width="24" height="24"><use xlink:href="#user"></use></svg>
+                </a>
+            @endauth
+        </li>
+        
+        <!-- Wishlist -->
+        <li>
+            <a href="#" class="p-2 mx-1">
+                <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
+            </a>
+        </li>
+        
+        <!-- Shopping Cart dengan Badge -->
+        <li>
+            @auth
+                <a href="{{ route('cart.index') }}" class="p-2 mx-1 position-relative">
+                    <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                    
+                    @php
+                        $cartCount = App\Models\Cart::where('user_id', Auth::id())->sum('quantity');
+                    @endphp
+                    
+                    @if($cartCount > 0)
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">
+                            {{ $cartCount }}
+                        </span>
+                    @endif
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="p-2 mx-1">
+                    <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                </a>
+            @endauth
+        </li>
+        
+    </ul>
+</div>
+
             </div>
         </div>
     </header>
@@ -661,23 +703,42 @@
                         </div>
 
                         <!-- Buttons -->
-                        <div class="mt-auto">
-                            <div class="d-grid gap-2">
-                                <a href="{{ route('buah.lokal.show', $buah->id) }}" 
-                                   class="btn btn-outline-primary btn-sm">
-                                    <i class="bi bi-eye-fill"></i> Lihat Detail
-                                </a>
-                                @if($buah->stok > 0)
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="bi bi-cart-plus-fill"></i> Tambah Keranjang
-                                    </button>
-                                @else
-                                    <button class="btn btn-secondary btn-sm" disabled>
-                                        <i class="bi bi-x-circle-fill"></i> Stok Habis
-                                    </button>
-                                @endif
-                            </div>
-                        </div>
+<!-- Buttons -->
+<div class="mt-auto">
+    <div class="d-grid gap-2">
+        <a href="{{ route('buah.lokal.show', $buah->id) }}" class="btn btn-outline-primary btn-sm">
+            <i class="bi bi-eye-fill"></i> Lihat Detail
+        </a>
+        
+        @if($buah->stok > 0)
+            @auth
+                <!-- Form Tambah ke Keranjang -->
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_name" value="{{ $buah->nama }}">
+                    <input type="hidden" name="price" value="{{ $buah->harga_diskon ?? $buah->harga }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="product_image" value="{{ $buah->gambar }}">
+                    
+                    <button type="submit" class="btn btn-primary btn-sm w-100">
+                        <i class="bi bi-cart-plus-fill"></i> Tambah Keranjang
+                    </button>
+                </form>
+            @else
+                <!-- Jika belum login, redirect ke login -->
+                <a href="{{ route('login') }}" class="btn btn-primary btn-sm w-100">
+                    <i class="bi bi-cart-plus-fill"></i> Login untuk Belanja
+                </a>
+            @endauth
+        @else
+            <button class="btn btn-secondary btn-sm w-100" disabled>
+                <i class="bi bi-x-circle-fill"></i> Stok Habis
+            </button>
+        @endif
+    </div>
+</div>
+
+
                     </div>
                 </div>
             </div>
