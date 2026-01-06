@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -160,20 +148,6 @@
           </li>
 
           <li class="menu-item">
-            <a href="{{ route('buah-lokals.index') }}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-leaf"></i>
-              <div>Buah Lokal</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
-            <a href="{{ route('buah-impors.index') }}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-world"></i>
-              <div>Buah Impor</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
             <a href="{{ route('promos.index') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
               <div>Promo</div>
@@ -192,8 +166,8 @@
             <span class="menu-header-text">Transaksi</span>
           </li>
 
-          <li class="menu-item {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}">
-            <a href="{{ route('admin.orders.index') }}" class="menu-link">
+          <li class="menu-item {{ request()->routeIs('orders.*') ? 'active' : '' }}">
+            <a href="{{ route('orders.index') }}" class="menu-link">
               <i class="menu-icon tf-icons bx bx-cart"></i>
               <div>Orders</div>
             </a>

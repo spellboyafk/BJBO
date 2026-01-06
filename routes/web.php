@@ -13,7 +13,6 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrderController;
 
-
 Route::get('/test-promo', function () {
     return "TEST PROMO BERHASIL!";
 });
