@@ -190,16 +190,24 @@
         <div class="row py-3 border-bottom">
           
           <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-            <div class="d-flex align-items-center my-3 my-sm-0">
-              <a href="index.html">
-                <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid">
-              </a>
+  
+              <div class="d-flex align-items-center my-3 my-sm-0">
+                <a href="{{ url('/') }}">
+                  <img 
+                    src="{{ asset('images/logo-bjbo.png') }}" 
+                    alt="BJBO - Bengkalis Jual Buah Online" 
+                    class="img-fluid logo-bjbo">
+                </a>
+              </div>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#menu"></use>
+                </svg>
+              </button>
+
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
-            </button>
-          </div>
+
           
           <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
             <div class="search-bar row bg-light p-2 rounded-4">

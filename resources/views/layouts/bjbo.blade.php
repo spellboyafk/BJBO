@@ -443,14 +443,43 @@
 </head>
 <body>
     <!-- Header -->
-       <header>
+     <!-- SVG Sprite Definitions -->
+    <svg style="display: none;">
+      <symbol id="menu" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </symbol>
+      <symbol id="user" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </symbol>
+      <symbol id="wishlist" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </symbol>
+      <symbol id="shopping-bag" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/>
+      </symbol>
+      <symbol id="fresh" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </symbol>
+      <symbol id="organic" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 11 6 11s6-6.5 6-11c0-3.31-2.69-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+      </symbol>
+      <symbol id="delivery" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M18 18.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM19.5 9.5h-1.54l-1.68-2.24c-.29-.39-.76-.62-1.28-.62H11v2h4l1.5 2h-6V4.5c0-.83-.67-1.5-1.5-1.5h-4c-.83 0-1.5.67-1.5 1.5v12c0 .83.67 1.5 1.5 1.5H5c0 1.66 1.34 3 3 3s3-1.34 3-3h4c0 1.66 1.34 3 3 3s3-1.34 3-3h1c.83 0 1.5-.67 1.5-1.5v-4.5c0-.83-.67-1.5-1.5-1.5zM8 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+      </symbol>
+    </svg>
+
+    <!-- Header -->
+    <header>
       <div class="container-fluid">
         <div class="row py-3 border-bottom">
           
           <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
             <div class="d-flex align-items-center my-3 my-sm-0">
               <a href="index.html">
-                <img src="{{ asset('images/logo.svg') }}" alt="logo" class="img-fluid">
+                <img src="{{ asset('images/logo-bjbo.png') }}" 
+                    alt="BJBO - Bengkalis Jual Buah Online" 
+                    class="img-fluid logo-bjbo">
+ 
               </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -998,8 +1027,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <!-- FOOTER -->
 <footer class="footer bg-dark text-light pt-5 pb-3">
     <div class="container">
         <div class="row g-4">
@@ -1295,3 +1323,5 @@ body, html {
     }
 }
 </style>
+</body>
+</html>
